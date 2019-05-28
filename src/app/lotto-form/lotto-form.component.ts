@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../services/rest.service';
 import { DrawResults } from '../interfaces/draw-results.interface';
-import { restoreView } from '@angular/core/src/render3';
-import { IAppState } from 'src/store';
+import { environment } from '../../environments/environment';
+import { IAppState } from 'src/app/redux/store';
 import { NgRedux, select } from '@angular-redux/store';
-import { UPDATELOTTORESULTS } from '../app.actions';
+import { UPDATELOTTORESULTS } from '../redux/app.actions';
 
 
 @Component({
@@ -14,7 +14,6 @@ import { UPDATELOTTORESULTS } from '../app.actions';
 })
 export class LottoFormComponent implements OnInit {
 
-  lottoUrl = 'https://data.api.thelott.com/sales/vmax/web/data/lotto/latestresults';
   lottoPayLoad = '{"CompanyId":"GoldenCasket","MaxDrawCountPerProduct":1,"OptionalProductFilter":["Powerball"]}';
   lottoData: DrawResults;
   resultDataName = 'DrawResults';
@@ -29,7 +28,7 @@ export class LottoFormComponent implements OnInit {
    * Retrieves data from lotto
    */
   getLottoDatta() {
-    this.rest.postRequest(this.lottoUrl, this.lottoPayLoad)
+    this.rest.postRequest(environment.lottoUrl, this.lottoPayLoad)
       .subscribe(result => {
               if (result.Success) {
                 const downloadedData: DrawResults = result[this.resultDataName][0];

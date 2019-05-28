@@ -1,0 +1,15 @@
+<div class="row pl-5 pr-5 pt-5">
+  <div *ngFor="let item of lottoNumbers; let i = index" [class]="isEndNumber(item)?'col-lg-2 col-1':'col-1'">
+    <div *ngIf="isOddNumber(item) && isEndNumber(item); else usePlainDiv">
+      <div class="row" >
+        <div class="col-6"></div>
+        <div class="col-6">
+            <app-form-box lottoNumber={{item}}></app-form-box>
+        </div>
+      </div>
+    </div>
+    <ng-template #usePlainDiv>
+      <app-form-box lottoNumber={{item}}></app-form-box>
+    </ng-template>
+  </div>
+</div>

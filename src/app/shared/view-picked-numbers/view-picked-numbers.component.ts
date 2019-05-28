@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
-import { IAppState } from 'src/store';
+import { IAppState } from 'src/app/redux/store';
 import { DrawResults } from 'src/app/interfaces/draw-results.interface';
 
 @Component({

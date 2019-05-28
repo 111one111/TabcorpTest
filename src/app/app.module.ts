@@ -9,8 +9,9 @@ import { LottoFormComponent } from './lotto-form/lotto-form.component';
 import { ViewPickedNumbersComponent } from './shared/view-picked-numbers/view-picked-numbers.component';
 import { FormsModule } from '@angular/forms';
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
-import { rootReducer, IAppState, INITIAL_STATE } from 'src/store';
-import { UPDATELOTTORESULTS } from './app.actions';
+import { rootReducer, IAppState, INITIAL_STATE } from 'src/app/redux/store';
+import { UPDATELOTTORESULTS } from './redux/app.actions';
+import { ResultsTableComponent } from './lotto-form/results-table/results-table.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UPDATELOTTORESULTS } from './app.actions';
     AppComponent,
     FormBoxComponent,
     LottoFormComponent,
-    ViewPickedNumbersComponent
+    ViewPickedNumbersComponent,
+    ResultsTableComponent
   ],
   imports: [
     BrowserModule,
