@@ -27,7 +27,7 @@ export class LottoFormComponent implements OnInit {
   /**
    * Retrieves data from lotto
    */
-  getLottoDatta() {
+  getLottoData() {
     this.rest.postRequest(environment.lottoUrl, this.lottoPayLoad)
       .subscribe(result => {
               if (result.Success) {

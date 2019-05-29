@@ -1,4 +1,3 @@
-import { Action } from 'redux';
 import { UPDATELOTTORESULTS } from './app.actions';
 import { DrawResults } from '../interfaces/draw-results.interface';
 

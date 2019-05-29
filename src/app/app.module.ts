@@ -36,9 +36,9 @@ import { ResultsTableComponent } from './lotto-form/results-table/results-table.
 export class AppModule {
     constructor(ngRedux: NgRedux<IAppState>,
                 devTools: DevToolsExtension) {
-      const storeEnhancers = devTools.isEnabled() ? // <- New
-      [ devTools.enhancer() ] : // <- New
-      []; // <- New
+      const storeEnhancers = devTools.isEnabled() ?
+      [ devTools.enhancer() ] :
+      []; 
       ngRedux.configureStore(
         rootReducer,
         INITIAL_STATE,
